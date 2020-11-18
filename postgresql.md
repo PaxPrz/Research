@@ -18,6 +18,18 @@ Start only specific version of postgresql
 
 `sudo service postgresql@${POSTGRES_VERSION}-main start`
 
+### Dump and restore
+
+Take a dump
+
+`$ pg_dump -U username db > file.sql`
+
+`$ pg_dumpall > all.sql`
+
+Do a restore
+
+`$ psql -U username db < file.sql`
+
 ### Monitoring
 
 - From official [documentation](https://www.postgresql.org/docs/13/monitoring.html)
