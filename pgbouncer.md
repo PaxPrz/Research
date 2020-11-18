@@ -48,6 +48,8 @@ server_idle_timeout = 10
 
 `sudo service pgbouncer start`
 
+Connecting through PgBouncer is same as the way you connect to postgres with psql
+
 `psql -h 127.0.0.1 -p 6432 -U username pgbouncer`
 
 ### Monitoring
