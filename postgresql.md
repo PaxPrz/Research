@@ -65,5 +65,5 @@ Do a restore
           (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_stat_database WHERE datname = (SELECT datname FROM pg_database WHERE oid = 16384)) AS "Transactions",
           (SELECT sum(xact_commit) FROM pg_stat_database WHERE datname = (SELECT datname FROM pg_database WHERE oid = 16384)) AS "Commits",
           (SELECT sum(xact_rollback) FROM pg_stat_database WHERE datname = (SELECT datname FROM pg_database WHERE oid = 16384)) AS "Rollbacks"
-       )
+       ) t;
        ```
