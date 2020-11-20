@@ -63,6 +63,8 @@ Connecting through PgBouncer is same as the way you connect to postgres with psq
 
 - Displays ``` database  |   user    | cl_active | cl_waiting | sv_active | sv_idle | sv_used | sv_tested | sv_login | maxwait | maxwait_us | pool_mode ```
 
+More queries are available. [Here](https://www.pgbouncer.org/usage.html) is the detail of each query.
+
 
 ## Best Resources to learn:
 
