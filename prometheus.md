@@ -31,9 +31,9 @@ The Prometheus ecosystem consists of multiple components, many of which are opti
 
 **TYPE**: One of 3 following type:
 
-    - 1. **Counter**: How many times x happened?
-    - 2. **Gauge**: What is the current value of x now?
-    - 3. **Histogram**: How long or how big?
+    - 1. Counter: How many times x happened?
+    - 2. Gauge: What is the current value of x now?
+    - 3. Histogram: How long or how big?
 
 
 ### Collecting Metrics Data from Targets
@@ -97,6 +97,72 @@ e.g.:
 `http_requests_total{status!="4.."}` : Query all HTTP status codes except 4xx ones
 
 `rate(http_requests_total[5m])[30m:]` : Returns the 5-minute rate of the http_requests_total metric for the past 30mins
+
+================================================
+
+
+# Part 2
+
+================================================
+
+## Installation
+
+Installation from [here](https://prometheus.io/download)
+
+Setup guides are defined [here](https://prometheus.io/docs/introduction/first_steps/)
+
+## Data Model
+
+### Metric names and labels
+
+Every time series is uniquely identified by its metric name and optional key-value pairs called labels.
+
+It must match the regex `[a-zA-Z_:][a-zA-Z0-9_:]*`
+
+### Notation
+
+> `<metric name>{<label name>=<label value>, ...}`
+    
+e.g: `api_http_requests_total{method="POST", handler="/messages"}`
+
+
+## Metric Types
+
+### 1. Counter
+
+A counter is a cumulative metric that represents a single monotonically increasing counter whose value can only increase or be reset to zero on restart. For example, you can use a counter to represent the number of requests served, tasks completed, or errors.
+
+```
+from prometheus_client import Counter
+c = Counter('my_failures', 'Description of counter')
+c.inc()     # Increment by 1
+c.inc(1.6)  # Increment by given value
+```
+
+### 2. Gauge
+
+A gauge is a metric that represents a single numerical value that can arbitrarily go up and down.
+
+```
+from prometheus_client import Gauge
+g = Gauge('my_inprogress_requests', 'Description of gauge')
+g.inc()      # Increment by 1
+g.dec(10)    # Decrement by given value
+g.set(4.2)   # Set to a given value
+```
+### 3. Histogram
+
+A histogram samples observations (usually things like request durations or response sizes) and counts them in configurable buckets. It also provides a sum of all observed values.
+
+```
+from prometheus_client import Histogram
+h = Histogram('request_latency_seconds', 'Description of histogram')
+h.observe(4.7)    # Observe 4.7 (seconds in this case)
+```
+
+### 4. Summary
+
+Similar to a histogram, a summary samples observations (usually things like request durations and response sizes). While it also provides a total count of observations and a sum of all observed values, it calculates configurable quantiles over a sliding time window.
 
 
 
