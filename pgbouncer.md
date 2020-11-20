@@ -44,6 +44,8 @@ server_idle_timeout = 10
 ....
 ```
 
+**NOTE**: PgBouncer doesn't use TLS by default. Need to setup.
+
 ### Starting service
 
 `sudo service pgbouncer start`
