@@ -1,6 +1,22 @@
 # Prometheus
 ===================
 
+## Architecture
+
+![prometheus architecture](images/prometheus_arch.png)
+
+## Components
+
+The Prometheus ecosystem consists of multiple components, many of which are optional:
+
+- the main Prometheus server which scrapes and stores time series data
+- client libraries for instrumenting application code
+- a push gateway for supporting short-lived jobs
+- special-purpose exporters for services like HAProxy, StatsD, Graphite, etc.
+- an alertmanager to handle alerts
+- various support tools
+
+
 ### Main Component: Prometheus Server
 
 <img src="./images/prometheus_server.png" width="600px">
