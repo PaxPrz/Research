@@ -164,6 +164,12 @@ h.observe(4.7)    # Observe 4.7 (seconds in this case)
 
 Similar to a histogram, a summary samples observations (usually things like request durations and response sizes). While it also provides a total count of observations and a sum of all observed values, it calculates configurable quantiles over a sliding time window.
 
+```
+from prometheus_client import Summary
+s = Summary('request_latency_seconds', 'Description of summary')
+s.observe(4.7)    # Observe 4.7 (seconds in this case)
+```
 
+**More on code samples available at [prometheus/client_python](https://github.com/prometheus/client_python)**
 
 
