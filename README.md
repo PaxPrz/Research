@@ -6,3 +6,6 @@ Research Documentation
 ### 2. [PostgreSQL](https://github.com/PaxPrz/Research/blob/main/postgresql.md)
 
 ### 3. [PgBouncer](https://github.com/PaxPrz/Research/blob/main/pgbouncer.md)
+
+### 4. [Prometheus](https://github.com/PaxPrz/Research/blob/main/prometheus.md)
+
