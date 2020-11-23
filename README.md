@@ -9,3 +9,4 @@ Research Documentation
 
 ### 4. [Prometheus](https://github.com/PaxPrz/Research/blob/main/prometheus.md)
 
+### 5. [Grafana](https://github.com/PaxPrz/Research/blob/main/grafana.md)
