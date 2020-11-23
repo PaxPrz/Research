@@ -318,3 +318,5 @@ The Alertmanager has special requirements for behavior of its client. Those are 
 
 Alertmanager supports configuration to create a cluster for high availability. This can be configured using the --cluster-* flags.
 
+Step by step tutorial [here](https://grafana.com/blog/2020/02/25/step-by-step-guide-to-setting-up-prometheus-alertmanager-with-slack-pagerduty-and-gmail/)
+
