@@ -173,3 +173,39 @@ s.observe(4.7)    # Observe 4.7 (seconds in this case)
 **More on code samples available at [prometheus/client_python](https://github.com/prometheus/client_python)**
 
 
+## Rules
+
+### 1. Recording rules:
+
+```
+# The name of the group. Must be unique within a file.
+name: <string>
+
+# How often rules in the group are evaluated.
+[ interval: <duration> | default = global.evaluation_interval ]
+
+rules:
+    # The name of the time series to output to. Must be a valid metric name.
+    record: <string>
+
+    # The PromQL expression to evaluate. Every evaluation cycle this is
+    # evaluated at the current time, and the result recorded as a new set of
+    # time series with the metric name as given by 'record'.
+    expr: <string>
+
+    # Labels to add or overwrite before storing the result.
+    labels:
+        [ <labelname>: <labelvalue> ]
+```
+
+e.g:
+
+```
+groups:
+  - name: example
+    rules:
+    - record: job:http_inprogress_requests:sum
+      expr: sum by (job) (http_inprogress_requests)
+```
+
+
