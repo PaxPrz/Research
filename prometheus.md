@@ -246,3 +246,45 @@ groups:
       summary: High request latency
 ```
 
+## Querying Prometheus (PromQL)
+
+### Expression language data types 
+
+In Prometheus's expression language, an expression or sub-expression can evaluate to one of four types:
+
+    o Instant vector - a set of time series containing a single sample for each time series, all sharing the same timestamp
+    o Range vector - a set of time series containing a range of data points over time for each time series
+    o Scalar - a simple numeric floating point value
+    o String - a simple string value; currently unused
+
+It is also possible to negatively match a label value, or to match label values against regular expressions. The following label matching operators exist:
+
+    =: Select labels that are exactly equal to the provided string.
+    !=: Select labels that are not equal to the provided string.
+    =~: Select labels that regex-match the provided string.
+    !~: Select labels that do not regex-match the provided string.
+
+Label matchers can also be applied to metric names by matching against the internal __name__ label.
+
+> {__name__=~"job:.*"}
+
+** Range Vector Selectors **
+
+> http_requests_total{job="prometheus"}[5m]
+
+** Offset modifier **
+
+> http_requests_total offset 5m
+
+
+## Prometheus API
+
+> http://localhost:9090/api/v1/query?query=...
+
+Returns data in json
+
+More detail in [here](https://prometheus.io/docs/prometheus/latest/querying/api/)
+
+### Free prometheus / grafana: [robustperception](demo.robustperception.io)
+
+
