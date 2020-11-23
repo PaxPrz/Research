@@ -288,3 +288,33 @@ More detail in [here](https://prometheus.io/docs/prometheus/latest/querying/api/
 ### Free prometheus / grafana: [robustperception](demo.robustperception.io)
 
 
+## Exporter
+
+### Starting pgbouncer exporter:
+
+> ./pgbouncer_exporter --pgBouncer.connectionString="postgres://postgres:@localhost:6432/pgbouncer?sslmode=disable"
+
+
+
+## AlertManager
+
+### Grouping
+
+Grouping categorizes alerts of similar nature into a single notification. This is especially useful during larger outages when many systems fail at once and hundreds to thousands of alerts may be firing simultaneously.
+
+### Inhibition
+
+Inhibition is a concept of suppressing notifications for certain alerts if certain other alerts are already firing.
+
+### Silences
+
+Silences are a straightforward way to simply mute alerts for a given time.
+
+### Client behavior
+
+The Alertmanager has special requirements for behavior of its client. Those are only relevant for advanced use cases where Prometheus is not used to send alerts.
+
+### High Availability
+
+Alertmanager supports configuration to create a cluster for high availability. This can be configured using the --cluster-* flags.
+
