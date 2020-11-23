@@ -208,4 +208,41 @@ groups:
       expr: sum by (job) (http_inprogress_requests)
 ```
 
+## 2. Alerting rules
+
+```
+# The name of the alert. Must be a valid label value.
+alert: <string>
+
+# The PromQL expression to evaluate. Every evaluation cycle this is
+# evaluated at the current time, and all resultant time series become
+# pending/firing alerts.
+expr: <string>
+
+# Alerts are considered firing once they have been returned for this long.
+# Alerts which have not yet fired for long enough are considered pending.
+[ for: <duration> | default = 0s ]
+
+# Labels to add or overwrite for each alert.
+labels:
+  [ <labelname>: <tmpl_string> ]
+
+# Annotations to add to each alert.
+annotations:
+  [ <labelname>: <tmpl_string> ]
+```
+e.g:
+
+```
+groups:
+- name: example
+  rules:
+  - alert: HighRequestLatency
+    expr: job:request_latency_seconds:mean5m{job="myjob"} > 0.5
+    for: 10m
+    labels:
+      severity: page
+    annotations:
+      summary: High request latency
+```
 
