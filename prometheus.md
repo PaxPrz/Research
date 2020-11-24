@@ -296,7 +296,7 @@ More detail in [here](https://prometheus.io/docs/prometheus/latest/querying/api/
 
 
 
-## AlertManager
+# AlertManager
 
 ### Grouping
 
@@ -320,3 +320,9 @@ Alertmanager supports configuration to create a cluster for high availability. T
 
 Step by step tutorial [here](https://grafana.com/blog/2020/02/25/step-by-step-guide-to-setting-up-prometheus-alertmanager-with-slack-pagerduty-and-gmail/)
 
+
+## Configuration
+
+Question for multiple receiver [here](https://stackoverflow.com/questions/64595610/alertmanager-webhook-does-not-work-when-defined-on-its-own)
+
+### 
