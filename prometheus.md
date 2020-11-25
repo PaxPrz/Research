@@ -296,6 +296,8 @@ More detail in [here](https://prometheus.io/docs/prometheus/latest/querying/api/
 
 ###  Exporter for [nginx](https://github.com/nginxinc/nginx-prometheus-exporter)
 
+Blog [here](https://blog.ruanbekker.com/blog/2020/04/25/nginx-metrics-on-prometheus-with-the-nginx-log-exporter/)
+
 Configuration for exporter:
 
 ```
