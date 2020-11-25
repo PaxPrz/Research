@@ -24,6 +24,8 @@ v2 dashboard [here](https://grafana.com/grafana/dashboards/12559)
 1. Using **grok**. Blog link [here](https://medium.com/bolt-labs/using-json-for-nginx-log-format-793743064fc4)
 2. From **nginx conf**. Blog link [here](http://www.continualintegration.com/miscellaneous-articles/how-do-you-get-nginx-logs-to-be-in-json-format/)
 
+Configuration for different data source [here](https://grafana.com/docs/loki/latest/configuration/examples/)
+
 ## Alerting
 
 Loki includes a component called the Ruler, adapted from our upstream project, Cortex. The Ruler is responsible for continually evaluating a set of configurable queries and then alerting when certain conditions happen, e.g. a high percentage of error logs. [more](https://grafana.com/docs/loki/latest/alerting/)
